@@ -2,7 +2,7 @@ const express = require('express');
 
 const app = express();
 
-app.get('/', (req, res) => (
+app.get('/user', (req, res) => (
     res.json({
         "slackUsername": "taiwonaf",
         "backend": true,
@@ -11,6 +11,4 @@ app.get('/', (req, res) => (
     })
 ))
 
-app.listen(8000, function() {
-    console.log("Server running at 8000")
-});
+app.listen(process.env.PORT || 3000, () => console.log('Server is running'));
